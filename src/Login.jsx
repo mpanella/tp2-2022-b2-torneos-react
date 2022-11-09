@@ -1,12 +1,52 @@
 import React, { useState } from "react";
+import { BASE_URL, LOGIN } from "./Utils/ApiEndPoints.js";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import Cookies from "universal-cookie";
 
 export const Login = (props) => {
+  const cookies = new Cookies();
+
+  const history = useHistory();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email);
+    console.log(password);
+
+    let path = BASE_URL + LOGIN;
+
+    var data = JSON.stringify({
+      email: email,
+      password: password,
+    });
+
+    var config = {
+      method: "post",
+      url: path,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+
+        cookies.set("token", JSON.stringify(response.data.token));
+
+        history.push("/home");
+
+        //Todo bien pasa a home
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
@@ -37,7 +77,7 @@ export const Login = (props) => {
       </form>
       <button
         className="link-btn"
-        onClick={() => props.onFormSwith("register")}
+        onClick={() => history.push("/register")} //props.onFormSwith("register")
       >
         Don´t have an account? Register
       </button>
