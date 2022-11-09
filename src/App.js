@@ -3,6 +3,7 @@ import "./App.css";
 import { Login } from "./Login";
 import { Register } from "./Register";
 import { Home } from "./Home";
+import { HomeAdmin } from "./HomeAdmin";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/home" exact>
             <Home></Home>;
+          </Route>
+          <Route path="/homeAdmin" exact>
+            <HomeAdmin></HomeAdmin>;
           </Route>
         </Switch>
       </Router>

@@ -4,7 +4,7 @@ import { BASE_URL } from "./Utils/ApiEndPoints.js";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-export const Home = () => {
+export const HomeAdmin = () => {
   const history = useHistory();
 
   const cookies = new Cookies();
@@ -40,5 +40,5 @@ export const Home = () => {
       });
   };
 
-  return <div>hola</div>;
+  return <div>hola admin</div>;
 };

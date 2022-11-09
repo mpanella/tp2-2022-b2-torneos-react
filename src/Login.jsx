@@ -38,9 +38,15 @@ export const Login = (props) => {
       .then(function (response) {
         console.log(JSON.stringify(response.data));
 
+        const rol = response.data.user.rol;
         cookies.set("token", JSON.stringify(response.data.token));
 
-        history.push("/home");
+        console.log("rol : ", rol);
+        if (rol.toString() === "admin".toString()) {
+          history.push("/homeAdmin");
+        } else {
+          history.push("/home");
+        }
 
         //Todo bien pasa a home
       })
