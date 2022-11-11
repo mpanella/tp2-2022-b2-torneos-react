@@ -37,11 +37,11 @@ export const AltaTorneo = () => {
 
     var data = JSON.stringify({
       nombre: name,
-      cantEquipo: cant,
+      cantEquipos: cant,
       idPredio: idPRedio,
     });
 
-    console.log("path ; ", path);
+    //console.log("path ; ", path);
     console.log(token);
 
     var config = {
