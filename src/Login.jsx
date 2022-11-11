@@ -41,7 +41,6 @@ export const Login = (props) => {
         const rol = response.data.user.rol;
         cookies.set("token", JSON.stringify(response.data.token));
 
-        console.log("rol : ", rol);
         if (rol.toString() === "admin".toString()) {
           history.push("/homeAdmin");
         } else {

@@ -40,5 +40,20 @@ export const HomeAdmin = () => {
       });
   };
 
-  return <div>hola admin</div>;
+  return (
+    <div>
+      <button
+        className="link-btn"
+        onClick={() => history.push("/created_predio")} //props.onFormSwith("register")
+      >
+        Crear Predio
+      </button>
+      <button
+        className="link-btn"
+        onClick={() => history.push("/alta_torneo")} //props.onFormSwith("register")
+      >
+        Crear un torneo
+      </button>
+    </div>
+  );
 };

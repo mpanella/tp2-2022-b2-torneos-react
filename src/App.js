@@ -4,6 +4,8 @@ import { Login } from "./Login";
 import { Register } from "./Register";
 import { Home } from "./Home";
 import { HomeAdmin } from "./HomeAdmin";
+import { CreatedPredio } from "./CreatedPredio";
+import { AltaTorneo } from "./AltaTorneo";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -32,35 +34,16 @@ function App() {
           <Route path="/homeAdmin" exact>
             <HomeAdmin></HomeAdmin>;
           </Route>
+          <Route path="/created_predio" exact>
+            <CreatedPredio></CreatedPredio>;
+          </Route>
+          <Route path="/alta_torneo" exact>
+            <AltaTorneo></AltaTorneo>
+          </Route>
         </Switch>
       </Router>
     </div>
-
-    // <div className="App">
-    //   {currentForm === "login" ? (
-    //     <Login onFormSwith={toggleForm} />
-    //   ) : (
-    //     <Register onFormSwith={toggleForm} />
-    //   )}
-    // </div>
   );
 }
 
 export default App;
-
-// {() => {
-//   switch (currentForm) {
-//     case "login":
-//       <Login onFormSwith={toggleForm} />;
-//       break;
-//     case "register":
-//       <Register onFormSwith={toggleForm} />;
-//       break;
-//     case "home":
-//       <Home onFormSwith={toggleForm} />;
-//       break;
-
-//     default:
-//       break;
-//   }
-// }}
