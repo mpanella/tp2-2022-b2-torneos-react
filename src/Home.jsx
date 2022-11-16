@@ -40,5 +40,14 @@ export const Home = () => {
       });
   };
 
-  return <div>hola</div>;
+  return (
+    <div>
+      <button
+        className="link-btn"
+        onClick={() => history.push("/")} //props.onFormSwith("register")
+      >
+        Cerrar Session
+      </button>
+    </div>
+  );
 };

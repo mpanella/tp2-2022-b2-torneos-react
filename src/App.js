@@ -6,6 +6,7 @@ import { Home } from "./Home";
 import { HomeAdmin } from "./HomeAdmin";
 import { CreatedPredio } from "./CreatedPredio";
 import { AltaTorneo } from "./AltaTorneo";
+import { InternaTournament } from "./InternaTournament";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/alta_torneo" exact>
             <AltaTorneo></AltaTorneo>
+          </Route>
+          <Route path="/interna_torneo" exact>
+            <InternaTournament></InternaTournament>
           </Route>
         </Switch>
       </Router>
