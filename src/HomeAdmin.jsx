@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cookies from "universal-cookie";
 import { BASE_URL, ADMINHOME } from "./Utils/ApiEndPoints.js";
 import axios from "axios";
@@ -18,32 +18,34 @@ export const HomeAdmin = () => {
     history.push("/");
   }
 
-  const getData = () => {
-    let path = BASE_URL + ADMINHOME;
+  useEffect(() => {
+    const getData = () => {
+      let path = BASE_URL + ADMINHOME;
 
-    var config = {
-      method: "get",
-      url: path,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: token,
-      },
+      var config = {
+        method: "get",
+        url: path,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: token,
+        },
+      };
+
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data.respuesta));
+
+          settorneo(response.data.respuesta);
+          //Todo bien pasa a home
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     };
 
-    axios(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data.respuesta));
-
-        settorneo(response.data.respuesta);
-        //Todo bien pasa a home
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  getData();
+    getData();
+  }, []);
 
   return (
     <div>

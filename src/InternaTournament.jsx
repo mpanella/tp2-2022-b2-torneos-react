@@ -15,37 +15,39 @@ export const InternaTournament = (props) => {
 
   let token = cookies.get("token");
 
-  const getData = () => {
-    let path = BASE_URL + GETTORNEO;
+  useEffect(() => {
+    const getData = () => {
+      let path = BASE_URL + GETTORNEO;
 
-    var data = JSON.stringify({
-      idTorneo: myparam,
-    });
+      var data = JSON.stringify({
+        idTorneo: myparam,
+      });
 
-    var config = {
-      method: "post",
-      url: path,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: token,
-      },
-      data: data,
+      var config = {
+        method: "post",
+        url: path,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: token,
+        },
+        data: data,
+      };
+
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+          settorneo(response.data.torneo);
+
+          //Todo bien pasa a home
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     };
 
-    axios(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
-        settorneo(response.data.torneo);
-
-        //Todo bien pasa a home
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  getData();
+    getData();
+  }, []);
 
   if (!token) {
     history.push("/");

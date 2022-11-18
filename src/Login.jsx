@@ -36,10 +36,9 @@ export const Login = (props) => {
 
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
-
         const rol = response.data.user.rol;
         cookies.set("token", JSON.stringify(response.data.token));
+        cookies.set("id_user", JSON.stringify(response.data.user._id));
 
         if (rol.toString() === "admin".toString()) {
           history.push("/homeAdmin");

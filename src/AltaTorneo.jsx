@@ -82,8 +82,8 @@ export const AltaTorneo = () => {
 
       axios(config)
         .then(function (response) {
-          console.log(JSON.stringify(response.data));
-          setPredios(response.data.single);
+          console.log(JSON.stringify(response.data.result.single));
+          setPredios(response.data.result.single);
         })
         .catch(function (error) {
           console.log(error);
