@@ -96,29 +96,29 @@ export const AltaTorneo = () => {
   return (
     <div className="auth-form-container">
       <form className="login-form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Nombre Torneo</label>
+        <label htmlFor="name">Nombre del Torneo</label>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="nombre"
+          placeholder="Nombre"
           id="nombre"
           name="nombre"
         ></input>
 
-        <label htmlFor="cantidad_equipos">Cantidad de equipos del torneo</label>
+        <label htmlFor="cantidad_equipos">Cantidad de Equipos</label>
         <input
           value={cant}
           onChange={(e) => setCant(e.target.value)}
-          placeholder="cantidad_equipos"
+          placeholder="0"
           id="cantidad_equipos"
           name="cantidad_equipos"
           type="number"
         ></input>
 
-        <label htmlFor="id_predio">Predio</label>
+        <label htmlFor="id_predio">Seleccione el Predio</label>
 
         <select
-          name="country"
+          name="predio"
           value={selectPredio}
           onChange={(e) => setSelectedOption(e.target.value)}
         >
@@ -131,8 +131,14 @@ export const AltaTorneo = () => {
           })}
         </select>
 
-        <button type="submit">Crear</button>
+        <button type="submit">Crear Torneo</button>
       </form>
+      <button
+        className="link-btn"
+        onClick={() => history.push("/homeAdmin")} //props.onFormSwith("register")
+      >
+        Volver
+      </button>
     </div>
   );
 };

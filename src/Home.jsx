@@ -127,7 +127,7 @@ export const Home = () => {
         className="link-btn"
         onClick={() => history.push("/")} //props.onFormSwith("register")
       >
-        Cerrar Sesion
+        Cerrar Sesión
       </button>
     </div>
   );

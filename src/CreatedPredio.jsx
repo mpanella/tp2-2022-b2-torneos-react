@@ -53,26 +53,32 @@ export const CreatedPredio = () => {
   return (
     <div className="auth-form-container">
       <form className="login-form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Nombre Predio</label>
+        <label htmlFor="name">Nombre del Predio</label>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="nombre"
+          placeholder="Nombre"
           id="nombre"
           name="nombre"
         ></input>
 
-        <label htmlFor="direccin">Dirccion</label>
+        <label htmlFor="direccin">Dirección</label>
         <input
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          placeholder="direccin"
+          placeholder="Dirección"
           id="direccion"
           name="direccin"
         ></input>
 
-        <button type="submit">Crear</button>
+        <button type="submit">Crear Predio</button>
       </form>
+      <button
+        className="link-btn"
+        onClick={() => history.push("/homeAdmin")} //props.onFormSwith("register")
+      >
+        Volver
+      </button>
     </div>
   );
 };

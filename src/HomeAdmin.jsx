@@ -61,19 +61,19 @@ export const HomeAdmin = () => {
         className="link-btn"
         onClick={() => history.push("/created_predio")} //props.onFormSwith("register")
       >
-        Crear Predio
+        Crear un Predio
       </button>
       <button
         className="link-btn"
         onClick={() => history.push("/alta_torneo")} //props.onFormSwith("register")
       >
-        Crear un torneo
+        Crear un Torneo
       </button>
       <button
         className="link-btn"
         onClick={() => history.push("/")} //props.onFormSwith("register")
       >
-        Cerrar Session
+        Cerrar Sesión
       </button>
     </div>
   );

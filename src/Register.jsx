@@ -54,41 +54,41 @@ export const Register = (props) => {
       <h2>Registro</h2>
 
       <form className="registe-form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Full Name</label>
+        <label htmlFor="name">Nombre</label>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="full name"
+          placeholder="Nombre"
           id="name"
           name="name"
         ></input>
-        <label htmlFor="apellido">last_name</label>
+        <label htmlFor="apellido">Apellido</label>
         <input
           value={apellido}
           onChange={(e) => setApellido(e.target.value)}
-          placeholder="last name"
+          placeholder="Apellido"
           id="last_name"
           name="last_name"
         ></input>
-        <label htmlFor="dni">dni</label>
+        <label htmlFor="dni">DNI</label>
         <input
           value={dni}
           onChange={(e) => setDNI(e.target.value)}
-          placeholder="dni"
+          placeholder="DNI"
           id="dni"
           name="dni"
         ></input>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Correo Electrónico</label>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
-          placeholder="youremail@gmail.com"
+          placeholder="tuemail@tuemail.com"
           id="email"
           name="email"
         ></input>
 
-        <label htmlFor="password">Pasword</label>
+        <label htmlFor="password">Password</label>
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -98,10 +98,10 @@ export const Register = (props) => {
           name="password"
         ></input>
 
-        <button type="submit">Register</button>
+        <button type="submit">Registrar</button>
       </form>
       <button className="link-btn" onClick={() => history.push("/")}>
-        Already have an account? Register
+        Ya tenes una cuenta? Iniciar Sesión
       </button>
     </div>
   );

@@ -69,6 +69,12 @@ export const InternaTournament = (props) => {
           );
         })}
       </ul>
+      <button
+        className="link-btn"
+        onClick={() => history.push("/homeAdmin")} //props.onFormSwith("register")
+      >
+        Volver
+      </button>
     </div>
   );
 };

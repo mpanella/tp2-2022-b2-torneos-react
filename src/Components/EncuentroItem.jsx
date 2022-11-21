@@ -69,7 +69,7 @@ export const EncuentroItem = (props) => {
                 type="number"
                 placeholder="0"
               ></input>
-
+               - 
               <input
                 value={result2}
                 onChange={(e) => setResult2(e.target.value)}

@@ -30,13 +30,13 @@ function App() {
             <Register onFormSwith={toggleForm} />
           </Route>
           <Route path="/home" exact>
-            <Home></Home>;
+            <Home></Home>
           </Route>
           <Route path="/homeAdmin" exact>
-            <HomeAdmin></HomeAdmin>;
+            <HomeAdmin></HomeAdmin>
           </Route>
           <Route path="/created_predio" exact>
-            <CreatedPredio></CreatedPredio>;
+            <CreatedPredio></CreatedPredio>
           </Route>
           <Route path="/alta_torneo" exact>
             <AltaTorneo></AltaTorneo>
